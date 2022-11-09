@@ -1,0 +1,14 @@
+.wrapper-second {
+    min-height: 100vh;
+    background-image: url("../images/dist/stories/promo.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @include breakpoint(sm) {
+        background-image: url("../images/dist/stories/promo-min.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}

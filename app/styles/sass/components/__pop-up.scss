@@ -1,0 +1,404 @@
+.pop-up {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    transform: translateY(-200px);
+    
+    .block {
+        display: none;
+    }
+
+    &_open {
+        animation-name: popUpOpen;
+        animation-duration: 0.8s;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes popUpOpen {
+        0% {
+            opacity: 0;
+            transform: translateY(-100%);
+        }
+
+        50% {
+            opacity: 0;
+            transform: translateY(-100%);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0%);
+        }
+    }
+
+    &_close {
+        animation-name: popUpClose;
+        animation-duration: 0.8s;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes popUpClose {
+        0% {
+            opacity: 1;
+            transform: translateY(0%);
+        }
+
+        50% {
+            opacity: 1;
+            transform: translateY(-100%);
+        }
+
+        100% {
+            opacity: 0;
+            transform: translateY(-100%);
+        }
+    }
+
+    &__overlay {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background-color: rgba(0, 0, 0, .3);
+    }
+
+    &__content {
+        position: fixed;
+        left: 0;
+        right: 0;
+        background-image: linear-gradient(to bottom,
+                rgba(255, 255, 255, 1) 6.15%,
+                rgba(13, 96, 111, 1) 202.69%);
+        box-shadow: 0 4px rgba(0, 0, 0, .25);
+        color: var(--third-color);
+        font-size: 1.2em;
+        text-align: center;
+        margin: 2% auto;
+        border-radius: 10px;
+        max-width: 650px;
+        box-shadow: 0 5px rgba(0, 0, 0, .1);
+
+        @include breakpoint(lg) {
+            max-width: 450px;
+        }
+
+        @include breakpoint(xs) {
+            max-width: 300px;
+        }
+
+        &_second {
+            top: 17.5%;
+        }
+    }
+
+    &__form {
+        border-radius: 10px;
+    }
+
+    &__form-title {
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 1.2;
+        text-align: center;
+        padding-top: 25px;
+        margin-bottom: 29px;
+
+        @include breakpoint(lg) {
+            font-size: 24px;
+            padding-top: 15px;
+            margin-bottom: 15px;
+        }
+
+        @include breakpoint(xs) {
+            font-size: 14px;
+        }
+    }
+
+    &__form-wrapper {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0 45px;
+
+        @include breakpoint(xs) {
+            padding: 0 20px;
+        }
+    }
+
+    &__form-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--fourth-color);
+        border: none;
+        border-radius: 10px;
+        padding: 12.5px 0;
+        margin-bottom: 20px;
+
+        @include breakpoint(lg) {
+            margin-bottom: 15px;
+        }
+
+        @include breakpoint(xs) {
+            margin-bottom: 10px;
+            padding: 3px 0;
+        }
+
+        &_lite {
+            background-color: var(--primary-color);
+            margin-bottom: 30px;
+
+            @include breakpoint(lg) {
+                margin-bottom: 15px;
+            }
+
+            @include breakpoint(xs) {
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    &__form-button-icon {
+        margin-right: 15.5px;
+
+        @include breakpoint(lg) {
+            margin-right: 10px;
+        }
+
+        @include breakpoint(xs) {
+            margin-right: 7px;
+        }
+    }
+
+    &__form-button-link {
+        font-family: "Red Hat Text";
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 1.3;
+        color: var(--primary-color);
+        text-decoration: none;
+        text-align: center;
+        font-stretch: expanded;
+        font-weight: normal;
+
+        @include breakpoint(lg) {
+            font-size: 14px;
+        }
+
+        @include breakpoint(xs) {
+            font-size: 8px;
+        }
+
+        &_lite {
+            color: var(--third-color);
+        }
+    }
+
+    &__form-text {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 1.2;
+        color: rgba(13, 96, 111, .5);
+        margin-bottom: 10px;
+
+        @include breakpoint(lg) {
+            font-size: 14px;
+        }
+
+        @include breakpoint(xs) {
+            font-size: 8px;
+        }
+
+        &::before {
+            content: "";
+            background-color: rgba(13, 96, 111, .5);
+            display: inline-block;
+            height: 1px;
+            vertical-align: middle;
+            min-width: 261px;
+            margin-right: 9px;
+
+            @include breakpoint(lg) {
+                min-width: 161px;
+            }
+
+            @include breakpoint(xs) {
+                min-width: 111px;
+            }
+        }
+
+        &::after {
+            content: "";
+            background-color: rgba(13, 96, 111, .5);
+            display: inline-block;
+            height: 1px;
+            position: relative;
+            vertical-align: middle;
+            min-width: 261px;
+            margin-left: 9px;
+
+            @include breakpoint(lg) {
+                min-width: 161px;
+            }
+
+            @include breakpoint(xs) {
+                min-width: 111px;
+            }
+        }
+    }
+
+    &__form-input {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+
+        @include breakpoint(lg) {
+            margin-bottom: 15px;
+        }
+
+        @include breakpoint(xs) {
+            margin-bottom: 10px;
+        }
+
+        &:last-of-type {
+            margin-bottom: 25px;
+
+            @include breakpoint(lg) {
+                margin-bottom: 15px;
+            }
+
+            @include breakpoint(xs) {
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    &__form-input-text {
+        font-size: 16px;
+        line-height: 1.2;
+        align-self: flex-start;
+        margin-bottom: 5px;
+
+        @include breakpoint(lg) {
+            font-size: 14px;
+        }
+
+        @include breakpoint(xs) {
+            font-size: 8px;
+        }
+    }
+
+    &__form-input-box {
+        min-width: 560px;
+        background-color: var(--primary-color);
+        border: none;
+        border-radius: 10px;
+        padding: 19px 0;
+        outline: none;
+        border: none;
+
+        @include breakpoint(lg) {
+            min-width: 360px;
+            padding: 15px 0;
+        }
+
+        @include breakpoint(xs) {
+            min-width: 260px;
+            padding: 7px 0;
+        }
+    }
+
+    &__form-button_dark {
+        background-color: var(--third-color);
+        padding: 14px 0;
+        margin-bottom: 8px;
+        border-radius: 10px;
+
+        @include breakpoint(xs) {
+            padding: 5px 0;
+            margin-bottom: 4px;
+        }
+    }
+
+    &__form-button-text {
+        font-family: "Red Hat Text";
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 1.3;
+        color: var(--primary-color);
+        background-color: var(--third-color);
+        border: none;
+
+        @include breakpoint(lg) {
+            font-size: 14px;
+        }
+
+        @include breakpoint(xs) {
+            font-size: 8px;
+        }
+    }
+
+    &__form-link {
+        display: inline;
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 1.2;
+        color: var(--third-color);
+        padding-bottom: 26px;
+        border-bottom: 1px solid rgba(13, 96, 111, .5);
+        margin-bottom: 20px;
+
+        @include breakpoint(lg) {
+            font-size: 10px;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+        }
+
+        @include breakpoint(xs) {
+            font-size: 6px;      
+        }
+
+        &:last-child {
+            border-bottom: 0;
+            padding-bottom: 25px;
+            margin-bottom: 0;
+
+            @include breakpoint(lg) {
+                padding-bottom: 15px;
+            }
+
+            @include breakpoint(xs) {                
+                margin-bottom: 0;
+            }
+        }
+
+        &_lite {
+            color: rgba(13, 96, 111, 0.5);
+            display: inline;
+            text-decoration: none;           
+        }
+
+        &_dark {
+            color: var(--third-color);
+            display: inline;
+        }
+
+        &_lite-second {
+            padding-left: 9px;
+        }
+
+        &_second {
+            padding-bottom: 16px;
+            margin-bottom: 21px;
+        }
+    }
+}

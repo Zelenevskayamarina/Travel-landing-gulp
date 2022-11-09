@@ -1,0 +1,76 @@
+.footer {
+    padding-top: 14px;
+    padding-bottom: 14px;
+
+    @include breakpoint(sm) {
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        @include breakpoint(sm) {
+            display: table;
+            margin: 0 auto;            
+        }
+    }
+    
+    &__copyright {
+        font-family: "Red Hat Text";
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.2;
+        color: var(--primary-color);    
+        margin-right: 163px;
+
+        @include breakpoint(lg) {
+            font-size: 14px;
+            margin-right: 115px;
+        }
+
+        @include breakpoint(md) {
+            font-size: 12px;
+            margin-right: 60px;
+        }
+
+        @include breakpoint(sm) {
+            display: none;
+            margin-right: 0;
+        }
+    }
+    
+    &__social-list {
+        display: flex;
+        align-items: center;
+        list-style: none; 
+
+        @include breakpoint(sm) {
+            margin-left: 10px; 
+        }  
+    }
+    
+    &__social-item {
+        list-style: none;
+        color: var(--primary-color);
+        margin-right: 21px;        
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &__social-icon {
+        width: 34px;
+        height: 34px;
+
+        &:active,
+        &:focus,
+        &:hover {
+            transform: scale(1.4);
+            transition: transform 0.3s;
+        }
+    }
+}

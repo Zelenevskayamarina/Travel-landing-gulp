@@ -1,0 +1,43 @@
+:root {
+    --primary-color: #FFFFFF;
+    --secondary-color: #F2785C;
+    --third-color: #0D606F;
+    --fourth-color: #1877F2;
+    --fifth-color: #158599;
+    --content-width: 1200px;
+    --mobile-padding: 15px;
+    --gutter: 15px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+ul,
+li,
+p {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    font-family: 'Aleo';
+    color: var(--primary-color);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.2; 
+}
+
+button {
+    border: none;    
+    cursor: pointer;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}

@@ -1,0 +1,47 @@
+.container {
+    max-width: calc(var(--content-width) + var(--mobile-padding) * 2);
+    margin: 0 auto;
+    padding-left: var(--mobile-padding);
+    padding-right: var(--mobile-padding);
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 calc(var(--gutter) * -1);
+}
+
+@for $value from 1 through 12 {
+    .col-#{$value} {
+            margin: 0 var(--gutter);
+            width: calc(100% / 12 * #{$value} - var(--gutter) * 2);
+    }
+
+    @include breakpoint(xl) {
+            .col-xl-#{$value} {
+                    margin: 0 var(--gutter);
+                    width: calc(100% / 12 * #{$value} - var(--gutter) * 2);
+            }
+    }
+
+    @include breakpoint(lg) {
+            .col-lg-#{$value} {
+                    margin: 0 var(--gutter);
+                    width: calc(100% / 12 * #{$value} - var(--gutter) * 2);
+            }
+    }
+
+    @include breakpoint(md) {
+            .col-md-#{$value} {
+                    margin: 0 var(--gutter);
+                    width: calc(100% / 12 * #{$value} - var(--gutter) * 2);
+            }
+    }
+
+    @include breakpoint(sm) {
+            .col-sm-#{$value} {
+                    margin: 0 var(--gutter);
+                    width: calc(100% / 12 * #{$value} - var(--gutter) * 2);
+            }
+    }    
+}

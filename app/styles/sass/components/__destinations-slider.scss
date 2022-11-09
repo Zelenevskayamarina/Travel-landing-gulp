@@ -1,0 +1,113 @@
+.destinations-slider {
+    position: relative;
+    margin-bottom: 40px;
+
+    @include breakpoint(lg) {
+        margin-bottom: 30px;
+    }
+
+    @include breakpoint(md) {
+        margin-bottom: 20px;
+    }
+
+    @include breakpoint(sm) {
+        padding: 0 80px;
+    }
+
+    @include breakpoint(xs) {
+        padding: 0;
+        margin-bottom: 10px;
+    }
+
+    &__pagination {
+        margin-top: 25px;
+
+        @include breakpoint(md) {
+            margin-top: 15px;
+        }
+
+        @include breakpoint(xs) {
+            position: absolute;
+            bottom: 6%;
+            left: 45.3%;
+            margin-top: 0px;
+        }
+    }
+
+    &__pagination>li {
+        margin-right: 10px;
+
+        @include breakpoint(xs) {
+            margin-right: 6px;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &__pagination>li>button {
+        display: block;
+        background: rgba(242, 120, 92, .5);
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        padding: 0;
+
+        @include breakpoint(lg) {
+            width: 15px;
+            height: 15px;
+        }
+
+        @include breakpoint(md) {
+            width: 10px;
+            height: 10px;
+        }
+
+        @include breakpoint(xs) {
+            width: 8px;
+            height: 8px;
+        }
+
+        &.is-active {
+            background: var(--secondary-color);
+        }
+    }
+
+    &__arrow {
+
+        @include breakpoint(xs) {            
+            position: absolute;            
+            background: none;
+            border: none;
+            top: 50%;
+            z-index: 1;   
+
+            &:first-child {
+                left: 4%;
+                transform: translatey(-53%) rotate(180deg);
+            }
+
+            &:last-child {
+                right: 4%;
+                transform: translatey(-45%);
+            }
+
+            &.is-active {
+                svg {
+                    fill: var(--secondary-color);
+                }                
+            }
+
+            svg {
+                fill: rgba(242, 120, 92, 0.5);
+                width: 27px;
+                height: 50px;
+            }
+        }
+    }
+    
+    &.destinations-slider {
+        padding: 0;
+    }
+}

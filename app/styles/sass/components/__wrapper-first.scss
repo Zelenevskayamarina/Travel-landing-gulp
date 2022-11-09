@@ -1,0 +1,10 @@
+.wrapper-first {
+    background-image: url("../images/dist/preview/preview.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @include breakpoint(xs) {
+        background-image: url("../images/dist/preview/preview-min.jpg");
+    }
+}

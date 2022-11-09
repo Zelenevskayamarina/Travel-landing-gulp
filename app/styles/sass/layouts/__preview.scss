@@ -1,0 +1,189 @@
+.preview {
+    padding-top: 32px;
+    padding-bottom: 256px;
+
+    @include breakpoint(lg) {
+        padding-bottom: 190px;
+    }
+
+    @include breakpoint(sm) {
+        padding-top: 100px;
+        padding-bottom: 120px;
+    }
+
+    @include breakpoint(xs) {
+        padding-top: 67px;
+        padding-bottom: 62px;
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 80px;
+        margin-bottom: 33px;
+
+        @include breakpoint(lg) {
+            font-size: 70px;
+        }
+
+        @include breakpoint(md) {
+            font-size: 50px;
+        }
+
+        @include breakpoint(sm) {
+            font-size: 0;
+            margin-bottom: 0;
+        }
+    }
+
+    &__subtitle {
+        font-weight: 700;
+        font-size: 20px;
+        font-style: italic;
+        letter-spacing: -0.1px;
+        margin-bottom: 46px;
+
+        @include breakpoint(lg) {
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+
+        @include breakpoint(md) {
+            font-size: 14px;
+        }
+
+        @include breakpoint(sm) {
+            font-size: 0;
+            margin-bottom: 0;
+        }
+    }
+
+    &__form-wrap {
+        max-width: 890px;
+        background-color: rgba(255, 255, 255, .7);
+        border: none;
+        border-radius: 16px;
+        padding-top: 18px;
+        padding-bottom: 18px;
+        padding-left: 36px;
+        padding-right: 18px;
+
+        @include breakpoint(lg) {
+            max-width: 770px;
+            padding-top: 16px;
+            padding-bottom: 15px;
+            padding-left: 20px;
+            padding-right: 15px;
+        }
+
+        @include breakpoint(md) {
+            max-width: 630px;
+        }
+
+        @include breakpoint(sm) {
+            max-width: 360px;
+            padding-top: 16px;
+            padding-bottom: 21px;
+            padding-left: 16.5px;
+            padding-right: 9px;
+        }
+
+        @include breakpoint(xs) {
+            padding-top: 9px;
+            padding-bottom: 9px;
+            padding-left: 11px;
+            padding-right: 9px;
+        }
+
+        @include breakpoint(xxs) {
+            max-width: 300px;
+        }
+    }
+
+    &__form-info {
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+    &__form-field {
+        min-width: 560px;
+        background-color: transparent;
+        border: none;
+
+        @include breakpoint(lg) {
+            min-width: 360px;
+        }
+
+        @include breakpoint(md) {
+            min-width: 260px;
+        }
+
+        @include breakpoint(sm) {
+            min-width: 226px;
+            padding-top: 2px;
+        }
+
+        @include breakpoint(xxs) {
+            min-width: 160px;
+        }
+
+        &::placeholder {
+            font-size: 24px;
+            line-height: 1.2;
+            font-stretch: semi-expanded;
+            font-style: italic;
+            color: var(--secondary-color);
+            vertical-align: middle;
+
+            @include breakpoint(lg) {
+                font-size: 18px;
+            }
+
+            @include breakpoint(md) {
+                font-size: 16px;
+            }
+
+            @include breakpoint(sm) {
+                font-size: 14px;
+                line-height: 2.8;
+                letter-spacing: -0.1px;
+            }
+
+            @include breakpoint(xxs) {
+                font-size: 13px;
+            }
+        }
+    }
+
+    &__form-submit {
+        font-family: "Red Hat Text";
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 1.2;
+        border-radius: 10px;
+        padding: 15px 33px;
+
+        @include breakpoint(lg) {
+            font-size: 18px;
+            padding: 10px 15px;
+        }
+
+        @include breakpoint(md) {
+            font-size: 16px;
+            padding: 9px 10px;
+        }
+
+        @include breakpoint(sm) {
+            padding: 8px 7.5px;
+            font-size: 11px;
+        }
+
+        &:active,
+        &:focus,
+        &:hover {
+            background-color: var(--fifth-color);
+            transform: scale(1.1);
+            transition: transform 0.3s;
+        }
+    }
+}

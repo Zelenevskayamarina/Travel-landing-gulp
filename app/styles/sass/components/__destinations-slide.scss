@@ -1,0 +1,80 @@
+.destinations-slide {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    max-width: 800px;
+
+    &__img-main {
+        max-width: 800px;
+        max-height: 800px;
+        border-radius: 16px;
+        position: relative;
+
+        @include breakpoint(lg) {
+            max-width: 550px;
+            max-height: 550px;
+        }
+
+        @include breakpoint(md) {
+            max-width: 420px;
+            max-height: 420px;
+        }
+
+        @include breakpoint(sm) {
+            display: none;
+        }
+
+        &:nth-child(2) {
+            margin: 0 60px 0 60px;
+        }
+
+        &_min {
+            display: none;
+
+            @include breakpoint(sm) {
+                display: block;
+                border-radius: 16px;
+            }
+        }
+    }
+
+    &__overlay {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__overlay-text {
+        position: absolute;
+        left: 19px;
+        bottom: 4.8%;
+        font-weight: 500;
+        font-size: 32px;
+        line-height: 1.3;
+        color: var(--primary-color);
+        text-transform: uppercase;
+        text-align: center;
+
+        @include breakpoint(lg) {
+            left: 20.5%;
+            font-size: 24px;
+        }
+
+        @include breakpoint(md) {
+            left: 24.5%;
+            font-size: 20px;
+        }
+
+        @include breakpoint(sm) {
+            font-size: 20px;
+        }
+
+        @include breakpoint(xs) {
+            bottom: 0;
+            top: 4.6%;
+            left: 8.1%;
+        }
+    }
+}
